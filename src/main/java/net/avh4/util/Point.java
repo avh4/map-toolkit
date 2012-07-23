@@ -18,20 +18,23 @@ public final class Point {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        final Point p = (Point) obj;
-        if (p == null) {
-            return false;
-        }
-        return p.x == x && p.y == y;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Point point = (Point) o;
+
+        if (x != point.x) return false;
+        if (y != point.y) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return x ^ y;
+        int result = x;
+        result = 31 * result + y;
+        return result;
     }
 
     @Override
@@ -61,9 +64,16 @@ public final class Point {
 
     public static ArrayList<Point> list(int[]... coords) {
         final ArrayList<Point> ret = new ArrayList<Point>(coords.length);
-        for (int i = 0; i < coords.length; i++) {
-            ret.add(new Point(coords[i][0], coords[i][1]));
+        for (int[] coord : coords) {
+            ret.add(new Point(coord[0], coord[1]));
         }
         return ret;
+    }
+
+    @SuppressWarnings("NestedMethodCall")
+    public Point clip(int x1, int y1, int x2, int y2) {
+        int x = Math.max(x1, Math.min(x2, this.x));
+        int y = Math.max(y1, Math.min(y2, this.y));
+        return new Point(x, y);
     }
 }

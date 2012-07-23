@@ -1,5 +1,6 @@
 package net.avh4.util;
 
+import org.fest.assertions.api.Assertions;
 import org.junit.Test;
 
 import java.util.List;
@@ -62,5 +63,13 @@ public class PointTest {
         assertThat(points.get(1), is(new Point(-5, 20)));
         assertThat(points.get(2), is(new Point(11, 10)));
         assertThat(points.get(3), is(new Point(11, 10)));
+    }
+
+    @Test
+    public void testClip() {
+        Assertions.assertThat(new Point(10, 10).clip(0, 0, 5, 99)).isEqualTo(new Point(5, 10));
+        Assertions.assertThat(new Point(10, 10).clip(0, 0, 99, 5)).isEqualTo(new Point(10, 5));
+        Assertions.assertThat(new Point(10, 10).clip(15, 0, 99, 99)).isEqualTo(new Point(15, 10));
+        Assertions.assertThat(new Point(10, 10).clip(0, 15, 99, 99)).isEqualTo(new Point(10, 15));
     }
 }
