@@ -1,12 +1,15 @@
 package net.avh4.rpg.maptoolkit.data;
 
+import net.avh4.test.junit.Nested;
 import net.avh4.util.Point;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
 @SuppressWarnings({"NestedMethodCall", "ChainedMethodCall"})
+@RunWith(Nested.class)
 public class UniqueValueMapDataTest {
 
     private UniqueValueMapData<Object> subject;
@@ -54,5 +57,25 @@ public class UniqueValueMapDataTest {
     public void shouldFindValues() {
         subject.setData(5, 8, A);
         assertThat(subject.find(A)).isEqualTo(new Point(5, 8));
+    }
+
+    @Test
+    public void shouldReturnValues() {
+        subject.setData(0, 0, A);
+        assertThat(subject.values()).contains(A);
+    }
+
+    public class RemovingAValue {
+        @Before
+        public void setUp() {
+            subject.setData(0, 0, A);
+            subject.remove(A);
+        }
+
+        @Test
+        public void shouldAllowTheValueToBeAddedAgain() {
+            subject.setData(3, 3, A);
+            assertThat(subject.find(A)).isEqualTo(new Point(3, 3));
+        }
     }
 }

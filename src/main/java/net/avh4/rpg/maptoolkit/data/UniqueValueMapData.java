@@ -2,6 +2,7 @@ package net.avh4.rpg.maptoolkit.data;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+import com.google.common.collect.ImmutableSet;
 import net.avh4.util.Point;
 
 public class UniqueValueMapData<T> extends MapDataBase<T> {
@@ -47,5 +48,14 @@ public class UniqueValueMapData<T> extends MapDataBase<T> {
     @SuppressWarnings("ChainedMethodCall")
     public Point find(T value) {
         return values.inverse().get(value);
+    }
+
+    @SuppressWarnings("NestedMethodCall")
+    public ImmutableSet<T> values() {
+        return ImmutableSet.copyOf(values.values());
+    }
+
+    public void remove(T value) {
+        values.inverse().remove(value);
     }
 }
