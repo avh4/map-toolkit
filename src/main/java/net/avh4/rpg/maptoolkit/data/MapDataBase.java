@@ -55,13 +55,26 @@ public abstract class MapDataBase<T> implements MapData<T> {
 
     @Override
     public String debugGetText(int x, int y) {
-        return getData(x, y).toString();
+        // TODO: test this
+        T data = getData(x, y);
+        if (data == null) {
+            return null;
+        } else if (data instanceof Integer) {
+            return data.toString();
+        } else if (data instanceof Number) {
+            return String.format("%.2f", ((Number) data).doubleValue());
+        } else {
+            return data.toString();
+        }
     }
 
     @Override
     public double debugGetTint(int x, int y) {
-        Object data = getData(x, y);
-        if (data instanceof Integer) {
+        // TODO: test this
+        T data = getData(x, y);
+        if (data == null) {
+            return 0;
+        } else if (data instanceof Integer) {
             return (Integer) data / 100.0;
         } else if (data instanceof Number) {
             return ((Number) data).doubleValue();
