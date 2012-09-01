@@ -3,7 +3,8 @@ package net.avh4.rpg.maptoolkit.data;
 public class DenseMapData<T> extends MapDataBase<T> {
     private final Object[][] data;
 
-    public DenseMapData(int maxX, int maxY) {
+    public DenseMapData(String name, int maxX, int maxY) {
+        super(name, maxX, maxY);
         data = new Object[maxX][maxY];
     }
 
@@ -16,15 +17,5 @@ public class DenseMapData<T> extends MapDataBase<T> {
     @Override
     public void setData(int x, int y, T value) {
         data[x][y] = value;
-    }
-
-    @Override
-    public int getWidth() {
-        return data.length;
-    }
-
-    @Override
-    public int getHeight() {
-        return data[0].length;
     }
 }

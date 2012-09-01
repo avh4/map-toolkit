@@ -12,4 +12,10 @@ public interface ConstMapData<T> {
     int getWidth();
 
     int getHeight();
+
+    String debugGetName();
+
+    String debugGetText(int x, int y);
+
+    double debugGetTint(int x, int y);
 }
