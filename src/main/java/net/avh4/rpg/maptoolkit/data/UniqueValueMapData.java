@@ -8,7 +8,7 @@ public class UniqueValueMapData<T> extends MapDataBase<T> {
     BiMap<Point, T> values = HashBiMap.create();
 
     public UniqueValueMapData(String name, int w, int h) {
-        super(name, h, w);
+        super(name, w, h);
     }
 
     @Override
