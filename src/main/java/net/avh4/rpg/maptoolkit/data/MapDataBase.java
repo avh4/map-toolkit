@@ -58,7 +58,7 @@ public abstract class MapDataBase<T> implements MapData<T> {
         // TODO: test this
         T data = getData(x, y);
         if (data == null) {
-            return null;
+            return "";
         } else if (data instanceof Integer) {
             return data.toString();
         } else if (data instanceof Number) {
