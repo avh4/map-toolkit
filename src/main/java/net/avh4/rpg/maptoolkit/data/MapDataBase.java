@@ -82,4 +82,11 @@ public abstract class MapDataBase<T> implements MapData<T> {
             return 0.5;
         }
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + '{' +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
