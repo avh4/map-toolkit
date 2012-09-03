@@ -87,6 +87,11 @@
             <artifactId>uilayer-core</artifactId>
             <version>${uilayer.version}</version>
         </dependency>
+        <dependency>
+            <groupId>net.avh4.framework</groupId>
+            <artifactId>uilayer-swing</artifactId>
+            <version>${uilayer.version}</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
