@@ -89,4 +89,35 @@ public abstract class MapDataBase<T> implements MapData<T> {
                 "name='" + name + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof MapDataBase)) return false;
+
+        MapDataBase that = (MapDataBase) o;
+
+        if (h != that.h) return false;
+        if (w != that.w) return false;
+
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                if (!getData(x, y).equals(that.getData(x, y))) return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = w;
+        result = 31 * result + h;
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                result = 31 * result + getData(x, y).hashCode();
+            }
+        }
+        return result;
+    }
 }
