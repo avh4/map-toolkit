@@ -1,4 +1,4 @@
-package net.avh4.rpg.primitives.tilesets;
+package net.avh4.rpg.maptoolkit;
 
 import net.avh4.framework.uilayer.scene.GraphicsOperations;
 

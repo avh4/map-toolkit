@@ -1,4 +1,4 @@
-package net.avh4.rpg.model.maps;
+package net.avh4.rpg.maptoolkit;
 
 public class MapValidationFailed extends AssertionError {
     public MapValidationFailed() {

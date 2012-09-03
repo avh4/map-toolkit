@@ -1,10 +1,9 @@
-package net.avh4.rpg.primitives;
+package net.avh4.rpg.maptoolkit;
 
 import com.google.common.collect.ImmutableList;
 import net.avh4.framework.uilayer.scene.ClippedElementDelegate;
 import net.avh4.math.graph.Graph;
 import net.avh4.rpg.maptoolkit.data.ConstMapData;
-import net.avh4.rpg.model.maps.Direction;
 import net.avh4.util.Point;
 
 public interface Map extends Graph<Point, Direction>, ClippedElementDelegate {

@@ -1,4 +1,6 @@
-package net.avh4.rpg.util;
+package net.avh4.rpg.maptoolkit.util;
+
+import net.avh4.rpg.maptoolkit.ui.swing.MapView;
 
 import javax.swing.*;
 

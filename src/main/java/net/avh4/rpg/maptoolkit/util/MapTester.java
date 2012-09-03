@@ -1,9 +1,9 @@
-package net.avh4.rpg.util;
+package net.avh4.rpg.maptoolkit.util;
 
 import com.google.common.collect.Lists;
-import net.avh4.rpg.model.maps.MapSpecification;
-import net.avh4.rpg.primitives.Map;
-import net.avh4.rpg.primitives.tilesets.Tileset;
+import net.avh4.rpg.maptoolkit.Map;
+import net.avh4.rpg.maptoolkit.MapSpecification;
+import net.avh4.rpg.maptoolkit.Tileset;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;

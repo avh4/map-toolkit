@@ -1,9 +1,9 @@
-package net.avh4.rpg.util;
+package net.avh4.rpg.maptoolkit.ui.swing;
 
 import net.avh4.framework.uilayer.scene.ClippedElement;
 import net.avh4.framework.uilayer.swing.SwingSceneRenderer;
-import net.avh4.rpg.primitives.Map;
-import net.avh4.rpg.primitives.tilesets.Tileset;
+import net.avh4.rpg.maptoolkit.Map;
+import net.avh4.rpg.maptoolkit.Tileset;
 
 import javax.swing.*;
 

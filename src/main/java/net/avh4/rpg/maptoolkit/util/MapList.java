@@ -1,6 +1,6 @@
-package net.avh4.rpg.util;
+package net.avh4.rpg.maptoolkit.util;
 
-import net.avh4.rpg.primitives.Map;
+import net.avh4.rpg.maptoolkit.Map;
 
 import java.util.Collection;
 

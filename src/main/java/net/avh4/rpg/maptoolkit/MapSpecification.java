@@ -1,7 +1,6 @@
-package net.avh4.rpg.model.maps;
+package net.avh4.rpg.maptoolkit;
 
 import com.google.common.collect.ImmutableSet;
-import net.avh4.rpg.primitives.Map;
 
 import java.util.HashSet;
 
