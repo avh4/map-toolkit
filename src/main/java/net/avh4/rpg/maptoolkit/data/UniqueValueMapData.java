@@ -7,12 +7,9 @@ import net.avh4.util.Point;
 
 public class UniqueValueMapData<T> extends MapDataBase<T> {
     BiMap<Point, T> values = HashBiMap.create();
-    private final int w;
-    private final int h;
 
-    public UniqueValueMapData(int w, int h) {
-        this.w = w;
-        this.h = h;
+    public UniqueValueMapData(String name, int w, int h) {
+        super(name, w, h);
     }
 
     @Override
@@ -33,16 +30,6 @@ public class UniqueValueMapData<T> extends MapDataBase<T> {
     @Override
     public void setData(Point p, T value) {
         values.put(p, value);
-    }
-
-    @Override
-    public int getWidth() {
-        return w;
-    }
-
-    @Override
-    public int getHeight() {
-        return h;
     }
 
     @SuppressWarnings("ChainedMethodCall")

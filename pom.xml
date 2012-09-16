@@ -33,6 +33,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <uilayer.version>1.0.9</uilayer.version>
     </properties>
 
     <build>
@@ -80,6 +81,16 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.avh4.framework</groupId>
+            <artifactId>uilayer-core</artifactId>
+            <version>${uilayer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.avh4.framework</groupId>
+            <artifactId>uilayer-swing</artifactId>
+            <version>${uilayer.version}</version>
         </dependency>
     </dependencies>
 

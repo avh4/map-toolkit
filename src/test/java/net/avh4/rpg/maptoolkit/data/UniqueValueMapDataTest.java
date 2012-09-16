@@ -17,7 +17,12 @@ public class UniqueValueMapDataTest {
 
     @Before
     public void setUp() {
-        subject = new UniqueValueMapData<Object>(100, 200);
+        subject = new UniqueValueMapData<Object>("My Data", 100, 200);
+    }
+
+    @Test
+    public void shouldHaveAName() throws Exception {
+        assertThat(subject.debugGetName()).isEqualTo("My Data");
     }
 
     @Test

@@ -13,7 +13,12 @@ public class DenseMapDataTest {
 
     @Before
     public void setUp() {
-        subject = new DenseMapData<Object>(100, 200);
+        subject = new DenseMapData<Object>("My Data", 100, 200);
+    }
+
+    @Test
+    public void shouldHaveAName() throws Exception {
+        assertThat(subject.debugGetName()).isEqualTo("My Data");
     }
 
     @Test
