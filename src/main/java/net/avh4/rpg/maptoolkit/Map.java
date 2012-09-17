@@ -26,5 +26,5 @@ public interface Map extends Graph<Point, Direction>, ClippedElementDelegate {
 
     ImmutableList<ConstMapData<?>> debugGetDataLayers();
 
-    void debugToggleDataLayer(ConstMapData<?> layerName);
+    void debugToggleDataLayer(ConstMapData<?> layer);
 }
